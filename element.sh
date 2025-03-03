@@ -8,11 +8,11 @@ SQL_QUERY="SELECT e.atomic_number, e.symbol, e.name, p.atomic_mass, p.melting_po
            JOIN properties p ON e.atomic_number = p.atomic_number WHERE "
 
 # Check if input is provided
-if [ -z "$1" ]; then
-  echo "Please provide an element as an argument."
-  exit 1
+if [[ -z $1 ]]
+then
+  echo -e "\nPlease provide an element as an argument."
+  exit
 fi
-
 # Initialize a flag to check if the element is found
 element_found=false
 
